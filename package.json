@@ -1,0 +1,13 @@
+{
+  "name": "devatwork-inventory",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "install:all": "npm install --workspaces",
+    "start:frontend": "npm --prefix frontend run dev",
+    "start:backend": "npm --prefix backend run start"
+  }
+}
