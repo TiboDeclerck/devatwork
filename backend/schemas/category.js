@@ -1,7 +1,7 @@
 import Joi from 'joi';
 
 const categorySchema = Joi.object({
-  id: Joi.string().optional(),
+  id: Joi.number().optional(),
   name: Joi.string().required().messages({
     'any.required': 'Category name is required',
   }),

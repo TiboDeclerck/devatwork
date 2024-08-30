@@ -1,7 +1,7 @@
 import Joi from 'joi';
 
 const supplierSchema = Joi.object({
-  id: Joi.string().optional(),
+  id: Joi.number().optional(),
   name: Joi.string().required().messages({
     'any.required': 'Supplier name is required',
   }),

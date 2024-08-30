@@ -3,7 +3,7 @@ import categorySchema from './category.js';
 import supplierSchema from './supplier.js'; 
 
 const productSchema = Joi.object({
-  id: Joi.string().optional(),
+  id: Joi.number().optional(),
   name: Joi.string().required().messages({
     'any.required': 'Product name is required',
   }),
