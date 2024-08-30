@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import Navigation, { Drawer, Navbar } from '../navigation'
+import { Drawer, Navbar } from '../navigation';
 
 export default function Layout() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -14,15 +14,15 @@ export default function Layout() {
   };
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen overflow-hidden">
       <Navbar open={drawerOpen} toggleMenu={toggleDrawer} />
 
-      <div className="flex flex-grow">
-        <div className="w-64">
+      <div className="flex flex-grow overflow-hidden">
+        <div className={`lg:w-64 h-full transition-width duration-300`}>
           <Drawer open={drawerOpen} onClose={closeDrawer} />
         </div>
 
-        <div className="flex-grow">
+        <div className="flex-grow h-full overflow-y-auto">
           <Outlet />
         </div>
       </div>

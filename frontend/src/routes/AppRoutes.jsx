@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "../components/Layout";
 import Grid from "../components/Grid";
 import Form from "../components/Form";
+import { DataGridProvider } from "../context/DataGridContext";
 
 export const routes = [
   {
@@ -26,7 +27,7 @@ export default function AppRoutes() {
         <Route path="/" element={<Layout />}>
           {routes.map(({ path }) => (
             <React.Fragment key={path}>
-              <Route path={path} element={<Grid />} />
+              <Route path={path} element={<DataGridProvider><Grid /></DataGridProvider>} />
               <Route path={`${path}/new`} element={<Form />} />
               <Route path={`${path}/:id`} element={<Form />} />
               <Route path={`${path}/:id/edit`} element={<Form />} />
