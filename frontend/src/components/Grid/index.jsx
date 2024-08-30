@@ -45,6 +45,12 @@ export default function Grid() {
       slots={{
         toolbar: Toolbar,
       }}
+      slotProps={{
+        loadingOverlay: {
+          variant: 'skeleton',
+          noRowsVariant: 'skeleton',
+        },
+      }}
     />
   );
 }

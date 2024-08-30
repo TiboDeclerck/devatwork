@@ -67,7 +67,7 @@ export default function ServerSelect({ inputField, field, isEdit, id }) {
       />
       {error && <p className="text-red-500 text-sm">Error: {error.message}</p>}
       {showDropdown && (
-        <ul className="absolute z-10 bg-white border border-gray-300 rounded-md mt-1 w-full max-h-60 overflow-y-auto shadow-lg">
+        <ul className="absolute z-10 bg-white border border-gray-300 rounded-md mt-1 w-full max-h-60 overflow-y-auto shadow-lg font-normal">
           {isLoading && <li className="p-2">Loading...</li>}
           {!isLoading && options.length === 0 && <li className="p-2">No options found</li>}
           {options.map((option) => (
