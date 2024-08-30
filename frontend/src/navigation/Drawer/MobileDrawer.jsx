@@ -36,13 +36,13 @@ export default function MobileDrawer({ paths, open, onClose }) {
       className={`fixed inset-0 z-50 transition-transform transform bg-gray-800 bg-opacity-75 ${
         open ? "translate-x-0" : "-translate-x-full"
       }`}
-      onClick={handleClickOutside} // Attach the click handler here
+      onClick={handleClickOutside} 
     >
       <div
         ref={drawerRef}
         {...swipeHandlers}
         className="w-64 h-full bg-white shadow-xl flex flex-col p-4"
-        onClick={(e) => e.stopPropagation()} // Prevents drawer clicks from closing it
+        onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}

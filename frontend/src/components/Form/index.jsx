@@ -26,7 +26,7 @@ export default function Form() {
 		if (data) {
 			reset(
 				fields.reduce((acc, field) => {
-					acc[field.name] = data[field.name] || '' // Use the fetched data or an empty string
+					acc[field.name] = data[field.name] || ''
 					return acc
 				}, {})
 			)
