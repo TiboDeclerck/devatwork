@@ -1,12 +1,15 @@
 import express from "express";
 import * as cc from "../controllers/category-controller.js";
+import categorySchema from "../schemas/category.js";
+import validateSchema from "../middlewares/validateSchema.js";
 
 const router = express.Router();
 
-router.post("/", cc.createCategory);
+router.post("/", validateSchema(categorySchema), cc.createCategory);
+router.put("/:id", validateSchema(categorySchema), cc.updateCategory);
+
 router.get("/", cc.getAllCategories);
 router.get("/:id", cc.getCategoryByID);
-router.put("/:id", cc.updateCategory);
 router.delete("/:id", cc.deleteCategory);
 
 export default router;

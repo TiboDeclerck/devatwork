@@ -16,7 +16,8 @@ export function getAllCategories(req, res) {
 }
 
 export function getCategoryByID(req, res) {
-  const category = cs.getCategoryByID(parseInt(req.params.id, 10));
+  const { id } = req.params;
+  const category = cs.getCategoryByID(parseInt(id));
   if (!category) {
     return res.status(404).json({ error: "Category not found" });
   }
