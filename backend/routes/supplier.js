@@ -9,6 +9,7 @@ router.post("/", validateSchema(supplierSchema), sc.createSupplier);
 router.put("/:id", validateSchema(supplierSchema), sc.updateSupplier);
 
 router.get("/", sc.getAllSuppliers);
+router.get("/dropdown", sc.getSuppliersDropdown);
 router.get("/:id", sc.getSupplierByID);
 router.delete("/:id", sc.deleteSupplier);
 

@@ -15,6 +15,10 @@ export function getAllSuppliers() {
   return suppliers;
 }
 
+export function getSuppliersDropdown(filter = "") {
+  return suppliers.filter((s) => s.name.toLowerCase().includes(filter.toLowerCase()) || s.name === filter).slice(0, 25);
+}
+
 export function getSupplierByID(id) {
   return suppliers.find((c) => c.id === id);
 }

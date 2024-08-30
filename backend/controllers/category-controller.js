@@ -15,6 +15,12 @@ export function getAllCategories(req, res) {
   res.json(categories);
 }
 
+export function getCategoriesDropdown(req, res) {
+  const { filter } = req.query;
+  const categories = cs.getCategoriesDropdown(filter);
+  res.json(categories);
+}
+
 export function getCategoryByID(req, res) {
   const { id } = req.params;
   const category = cs.getCategoryByID(parseInt(id));

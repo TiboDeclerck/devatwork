@@ -15,6 +15,13 @@ export function getAllSuppliers(req, res) {
   res.json(suppliers);
 }
 
+export function getSuppliersDropdown(req, res) {
+  const { filter } = req.query;
+  const categories = ss.getSuppliersDropdown(filter);
+  res.json(categories);
+}
+
+
 export function getSupplierByID(req, res) {
   const { id } = req.params;
   const supplier = ss.getSupplierByID(parseInt(id));

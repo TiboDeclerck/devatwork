@@ -9,6 +9,7 @@ router.post("/", validateSchema(categorySchema), cc.createCategory);
 router.put("/:id", validateSchema(categorySchema), cc.updateCategory);
 
 router.get("/", cc.getAllCategories);
+router.get("/dropdown", cc.getCategoriesDropdown);
 router.get("/:id", cc.getCategoryByID);
 router.delete("/:id", cc.deleteCategory);
 

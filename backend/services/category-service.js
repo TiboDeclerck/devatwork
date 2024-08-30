@@ -15,6 +15,10 @@ export function getAllCategories() {
   return categories;
 }
 
+export function getCategoriesDropdown(filter = "") {
+  return categories.filter((c) => c.name.toLowerCase().includes(filter.toLowerCase()) || c.name === filter).slice(0, 25);
+}
+
 export function getCategoryByID(id) {
   return categories.find((c) => c.id === id);
 }
