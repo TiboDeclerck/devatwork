@@ -9,6 +9,7 @@ import ToggleViewButton from './ToggleViewButton'
 import Field from './Field'
 import Tab from '../Tab'
 import BackButton from './BackButton'
+import DeleteButton from './DeleteButton'
 
 export default function Form() {
 	const { path, isEdit } = useCurrentPath()
@@ -42,12 +43,12 @@ export default function Form() {
 	}
 
 	if (error) {
-		return <div>Error: {error.message}</div>
+		return <div>Error loading details</div>
 	}
 
 	return (
 		<div className='max-w-lg mx-auto bg-white'>
-			<Tab tabComponents={[BackButton, ToggleViewButton]} />
+			<Tab tabComponents={[BackButton, ToggleViewButton, DeleteButton]} />
 			<div className='p-4 mt-5 rounded shadow-md'>
 				<FormProvider {...methods}>
 					<form onSubmit={handleSubmit(onSubmit)}>

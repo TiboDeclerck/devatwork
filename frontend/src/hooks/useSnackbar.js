@@ -1,4 +1,3 @@
-// src/hooks/useCustomSnackbar.js
 import { useSnackbar } from 'notistack';
 
 export default function useCustomSnackbar() {

@@ -52,5 +52,5 @@ export function deleteCategory(req, res) {
   if (!success) {
     return res.status(404).json({ error: "Category not found" });
   }
-  res.status(204).send();
+  res.json('ok');
 }
